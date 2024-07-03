@@ -1,0 +1,139 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.loader__container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #07091f;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+svg circle {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-width: 10;
+  stroke: #039ffe;
+  stroke-linecap: round;
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  transform: translate(5px, 5px);
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    stroke-dashoffset: 440;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  50.1% {
+    stroke-dashoffset: 880;
+  }
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.loading__wrapper {
+  height: 5px;
+  width: 600px;
+  background-color: #a9dcfd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.loading {
+  height: 5px;
+  width: 50%;
+  background-color: #039ffe;
+}
+
+.loading__percentage {
+  font-size: 32px;
+  color: #a9dcfd;
+}
+
+.accordion__container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.accordion__item {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #a9dcfd;
+}
+
+.accordion__item > div:first-child {
+  background-color: #00a1ff;
+}
+
+.accordion__btn {
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.accordion-content {
+  padding-inline: 12px;
+  font-size: 18px;
+  max-height: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.active {
+  padding-block: 12px;
+  max-height: 110px;
+  transition: all 0.3s ease-in-out;
+}
+
+.arrow {
+  transition: all 0.3s ease-in-out;
+}
+.active-arrow {
+  transform: rotate(-540deg);
+}
